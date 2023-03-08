@@ -6,7 +6,7 @@ export default function Info() {
       <motion.div
         className="inline-flex items-center mb-4 text-sm px-3 py-1 border border-slate-300 shadow-sm rounded-lg mx-1 scale-0 opacity-0"
         animate={{ scale: [1.2, 0.9, 1.1, 0.95, 1], opacity: 1 }}
-        transition={{ duration: 0.2, delay: 0 }}
+        transition={{ duration: 0.2, delay: 0.4 }}
       >
         <svg
           className="h-4 w-4 text-neutral-700"
@@ -56,7 +56,7 @@ export default function Info() {
       <motion.div
         className="inline-flex items-center mb-4 text-sm px-3 py-1 border border-slate-300 shadow-sm rounded-lg mx-1 scale-0 opacity-0"
         animate={{ scale: [1.2, 0.9, 1.1, 0.95, 1], opacity: 1 }}
-        transition={{ duration: 0.2, delay: 0 }}
+        transition={{ duration: 0.2, delay: 0.6 }}
       >
         <svg
           className="h-4 w-4 text-neutral-700"
