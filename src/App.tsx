@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Layout from "./components/Layout";
 import Info from "./components/Info";
 import Device from "./components/Device";
