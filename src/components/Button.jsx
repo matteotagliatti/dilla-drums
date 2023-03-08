@@ -28,7 +28,7 @@ export default function Button({ keyPress, play }) {
       transition={{ duration: 0.2, delay: 0.2 }}
     >
       <motion.button
-        className={`transform relative z-10 transition h-20 w-full rounded-lg bg-slate-200 border border-slate-300 flex flex-col p-4 items-center justify-end mb-0 after:content-['*'] after:rounded-lg after:absolute after:z-0 after:top-4 after:bottom-4 after:right-4 after:left-4 after:bg-cyan-500 after:blur-lg focus:ring-0 ${
+        className={`transform relative z-10 transition h-16 md:h-20 w-full rounded-lg bg-slate-200 border border-slate-300 flex flex-col p-4 items-center justify-end mb-0 after:content-['*'] after:rounded-lg after:absolute after:z-0 after:top-4 after:bottom-4 after:right-4 after:left-4 after:bg-cyan-500 after:blur-lg focus:ring-0 ${
           tap
             ? "translate-y-2 shadow-inner after:opacity-20"
             : "translate-y-0 after:opacity-0"

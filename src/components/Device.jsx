@@ -38,13 +38,13 @@ export default function Device() {
   }
 
   return (
-    <div className="w-96 flex flex-col border-4 border-slate-300 rounded-lg bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 shadow-lg">
+    <div className="flex flex-col border-4 border-slate-300 rounded-lg bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 shadow-lg">
       <div className="w-full pt-5 p-3 bg-slate-100 border-2 border-slate-200 rounded-md z-10">
         <div className="grid grid-cols-4 w-full gap-2">
           <div className="w-full py-2 col-span-4 flex justify-center">
             <Sticker />
           </div>
-          <div className="col-span-4 px-2 pt-2 pb-0 bg-slate-600 rounded-md grid grid-cols-4 gap-2">
+          <div className="col-span-4 px-2 pt-2 pb-0 bg-slate-600 rounded-md grid grid-cols-2 md:grid-cols-4 gap-y-1 gap-x-2 md:gap-2">
             {sounds.map((item, i) => (
               <Switch
                 itemName={item.name}
