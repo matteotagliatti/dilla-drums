@@ -7,12 +7,12 @@ import { HipHop, CasioPT30, RealDrums, TrapDrums } from "./Sounds";
 export default function Device() {
   const [activeSounds, setActiveSounds] = useState(HipHop);
 
-  const click = (active) => {
+  const click = (sounds) => {
     const sound = new Howl({
       src: [`/audio/click.mp3`],
     });
     sound.play();
-    setActiveSounds(active);
+    setActiveSounds(sounds);
   };
 
   const sounds = [
@@ -32,7 +32,7 @@ export default function Device() {
           <div className="col-span-4 px-2 pt-2 pb-0 bg-slate-600 rounded-md grid grid-cols-4 gap-2">
             {sounds.map((item, i) => (
               <Switch
-                item={item}
+                itemName={item.name}
                 key={i}
                 keyPress={item.keypress}
                 play={() => click(item.sounds)}

@@ -1,6 +1,6 @@
 import useKeypress from "react-use-keypress";
 
-export default function Switch({ item, active, play, keyPress }) {
+export default function Switch({ itemName, active, play, keyPress }) {
   const handleClick = () => {
     play();
   };
@@ -25,7 +25,7 @@ export default function Switch({ item, active, play, keyPress }) {
         <span
           className={`${active ? "text-cyan-600 blur-xs" : "text-slate-600"}`}
         >
-          {item.name}
+          {itemName}
         </span>
         <span className="text-xs opacity-50">{keyPress}</span>
       </button>
