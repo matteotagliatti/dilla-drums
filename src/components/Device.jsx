@@ -1,19 +1,14 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Howl } from "howler";
 import Sticker from "./Sticker";
 import Switch from "./Switch";
 import { HipHop, CasioPT30, RealDrums, TrapDrums } from "./Sounds";
+import Button from "./Button";
 
 export default function Device() {
+  const [active, setActive] = useState(null);
   const [activeSounds, setActiveSounds] = useState(HipHop);
-
-  const click = (sounds) => {
-    const sound = new Howl({
-      src: [`/audio/click.mp3`],
-    });
-    sound.play();
-    setActiveSounds(sounds);
-  };
 
   const sounds = [
     { name: "Beat", sounds: HipHop, keypress: "1" },
@@ -21,6 +16,26 @@ export default function Device() {
     { name: "Real", sounds: RealDrums, keypress: "3" },
     { name: "Trap", sounds: TrapDrums, keypress: "4" },
   ];
+
+  function click(sounds) {
+    const sound = new Howl({
+      src: [`/audio/click.mp3`],
+    });
+    sound.play();
+    setActiveSounds(sounds);
+  }
+
+  function playSound(source) {
+    const sound = new Howl({
+      src: [`/audio/${source.src}`],
+    });
+
+    setActive(source);
+    sound.play();
+    setTimeout(() => {
+      setActive(null);
+    }, 300);
+  }
 
   return (
     <div className="w-96 flex flex-col border-4 border-slate-300 rounded-lg bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 shadow-lg">
@@ -40,6 +55,13 @@ export default function Device() {
               />
             ))}
           </div>
+          {activeSounds.map((sound, i) => (
+            <Button
+              key={i}
+              keyPress={sound.key}
+              play={() => playSound(sound)}
+            />
+          ))}
         </div>
       </div>
       <div className="h-10 bg-transparent rounded-b-lg transform -translate-y-2 bg-gradient-to-t from-transparent to-black opacity-5" />
