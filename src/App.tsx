@@ -1,10 +1,12 @@
 import Layout from "./components/Layout";
-import Instructions from "./components/Info";
+import Info from "./components/Info";
+import Device from "./components/Device";
 
 export default function App() {
   return (
     <Layout>
-      <Instructions />
+      <Info />
+      <Device />
     </Layout>
   );
 }
