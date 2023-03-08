@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Howl } from "howler";
 import Sticker from "./Sticker";
 import Switch from "./Switch";
 import { HipHop, CasioPT30, RealDrums, TrapDrums } from "./Sounds";
 import Button from "./Button";
+import Screen from "./Screen";
 
 export default function Device() {
   const [active, setActive] = useState(null);
@@ -44,6 +44,7 @@ export default function Device() {
           <div className="w-full py-2 col-span-4 flex justify-center">
             <Sticker />
           </div>
+          <Screen active={active} />
           <div className="col-span-4 px-2 pt-2 pb-0 bg-slate-600 rounded-md grid grid-cols-2 md:grid-cols-4 gap-y-1 gap-x-2 md:gap-2">
             {sounds.map((item, i) => (
               <Switch
