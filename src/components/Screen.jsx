@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 
-function truncate(str) {
-  return str.replace(/^.*[\\\/]/, "");
+function truncate(str, len) {
+  let string = str.replace(/^.*[\\\/]/, "");
+  if (string.length > len) {
+    return string.substring(0, len) + "...";
+  } else {
+    return string;
+  }
 }
 
 export default function Screen({ active }) {
@@ -25,7 +30,7 @@ export default function Screen({ active }) {
             <div className="h-7 w-7">{active.icon}</div>
             <div className="flex flex-col flex-1 pl-2">
               <span>{active.name}</span>
-              <span className="truncate">{truncate(active.src)}</span>
+              <span className="truncate">{truncate(active.src, 20)}</span>
             </div>
           </div>
         ) : (
