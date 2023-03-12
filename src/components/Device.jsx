@@ -20,6 +20,7 @@ export default function Device() {
   function click(sounds) {
     const sound = new Howl({
       src: [`/audio/click.mp3`],
+      html5: true,
     });
     sound.play();
     setActiveSounds(sounds);
@@ -28,6 +29,7 @@ export default function Device() {
   function playSound(source) {
     const sound = new Howl({
       src: [`/audio/${source.src}`],
+      html5: true,
     });
 
     setActive(source);
