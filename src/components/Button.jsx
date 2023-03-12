@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useKeypress from "react-use-keypress";
+import { Tap } from "./Icons";
 
-export default function Button({ keyPress, play }) {
+export default function Button({ keyPress, play, onMobile }) {
   const [tap, setTap] = useState(false);
 
   function playSound() {
@@ -43,7 +44,7 @@ export default function Button({ keyPress, play }) {
                 : "bg-white text-black ring-white"
             }`}
           >
-            {keyPress}
+            {!onMobile ? keyPress : <Tap className="w-5 h-5" />}
           </span>
         }
       </motion.button>

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Keyboard, Sound } from "./Icons";
 
-export default function Info() {
+export default function Info({ onMobile }) {
   const iconClasses = "h-4 w-4 text-neutral700";
 
-  const info = [
+  let info = [
     {
       text: "Use keyboard",
       icon: <Keyboard className={iconClasses} />,
@@ -14,6 +14,10 @@ export default function Info() {
       icon: <Sound className={iconClasses} />,
     },
   ];
+
+  if (onMobile) {
+    info.shift();
+  }
 
   return (
     <div className="flex justify-center">

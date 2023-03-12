@@ -6,7 +6,7 @@ import { HipHop, CasioPT30, RealDrums, TrapDrums } from "./Sounds";
 import Button from "./Button";
 import Screen from "./Screen";
 
-export default function Device() {
+export default function Device({ onMobile }) {
   const [active, setActive] = useState(null);
   const [activeSounds, setActiveSounds] = useState(HipHop);
 
@@ -63,6 +63,7 @@ export default function Device() {
               key={i}
               keyPress={sound.key}
               play={() => playSound(sound)}
+              onMobile={onMobile}
             />
           ))}
         </div>
